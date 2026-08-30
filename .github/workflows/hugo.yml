@@ -1,0 +1,77 @@
+# ============================================================
+# GitHub Pages 自动部署
+# ------------------------------------------------------------
+# 每次推送到 main 分支时自动运行：
+#   1. 安装 Hugo（extended 版，支持 SCSS）
+#   2. 编译站点（hugo --minify）
+#   3. 把 public/ 部署到 GitHub Pages
+#
+# 前提：在仓库 Settings → Pages → Source 选择 "GitHub Actions"
+# ============================================================
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["main"]        # 推送到 main 时触发
+  workflow_dispatch:          # 也支持手动触发（Actions 页面点按钮）
+
+# 给 GITHUB_TOKEN 授权，允许部署到 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一个部署在跑
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # ---------- 构建 ----------
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.161.1    # 与本地版本一致
+    steps:
+      - name: 安装 Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb \
+            https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: 安装 Dart Sass（SCSS 编译需要）
+        run: sudo snap install dart-sass
+
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 配置 Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: 编译站点
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: 上传产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # ---------- 部署 ----------
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
