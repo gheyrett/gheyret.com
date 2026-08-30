@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{{- /* 页面级 RTL 支持：front matter 写 rtl = true 时启用从右到左（如维语页面） */ -}}
+{{- $pageLang := .Site.Language.Locale -}}
+{{- if .Params.rtl }}{{ $pageLang = "ug" }}{{ end -}}
+<html lang="{{ $pageLang }}"{{ if .Params.rtl }} dir="rtl"{{ end }}>
+    {{- partial "head.html" . -}}
+    <body a="{{ $.Site.Params.theme_config.appearance | default "auto" }}">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                {{- block "main" . }}{{- end }}
+                {{ partial "footer.html" }}
+            </div>
+        </main>
+    </body>
+</html>

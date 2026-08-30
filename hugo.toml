@@ -1,0 +1,44 @@
+# ============================================================
+# 站点配置文件（hugo.toml）
+# ------------------------------------------------------------
+# 当前使用主题：no-style-please（极简风，几乎零 CSS）
+# 单语言：中文
+# ============================================================
+
+# ---------- 基础设置 ----------
+baseURL = "https://gheyret.com/"     # 站点最终上线地址
+title = "Gheyret 的博客"             # 站点名称
+theme = "nostyleplease"              # 使用的主题（themes/nostyleplease/）
+defaultContentLanguage = "zh-cn"     # 默认语言代码
+locale = "zh-cn"                     # 区域设置
+enableEmoji = true                   # 允许 emoji
+
+# ---------- 每页文章数（列表分页用）----------
+[pagination]
+pagerSize = 10
+
+# ---------- 代码高亮 ----------
+[markup.highlight]
+style = "github-dark"    # 代码高亮配色
+noClasses = true         # 用内联样式（主题零 CSS 的保证）
+
+# ---------- 内容渲染 ----------
+[markup.goldmark.renderer]
+unsafe = true            # 允许 Markdown 里写原始 HTML
+
+# ---------- 目录（toc）----------
+[markup.tableOfContents]
+startLevel = 2           # 目录从二级标题开始
+endLevel = 3             # 到三级标题结束
+
+# ---------- 站点描述（首页标题下方显示）----------
+description = "技术笔记、随笔与项目分享"
+
+# ---------- 主题参数 ----------
+[params]
+  [params.theme_config]
+  appearance = "auto"             # 外观：light / dark / auto
+  back_home_text = ".."           # 文章页"返回首页"的链接文字
+  date_format = "2006-01-02"      # 日期格式
+  show_description = true         # 首页标题下是否显示 description
+  isShowFooter = true             # 是否显示页脚

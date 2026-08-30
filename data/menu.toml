@@ -1,0 +1,53 @@
+# ============================================================
+# 站点菜单配置（no-style-please 主题专用）
+# ------------------------------------------------------------
+# 注意：这个主题不用 hugo.toml 的 [[menu.main]]，
+# 而是用这个 data/menu.toml 文件定义首页菜单。
+#
+# 结构说明：
+#   [[entries]]          = 一个大分类（渲染为 <li>）
+#   title                = 显示的文字（可写 HTML）
+#   url                  = 可选，有则渲染为链接
+#   [[entries.entries]]  = 子条目（嵌套列表）
+#   [entries.post_list]  = 自动列出文章
+#     section            = 只列哪个 section 的文章
+#     limit              = 最多列几篇
+#     show_more          = 超出 limit 时是否显示"更多"链接
+#     show_more_text     = "更多"链接的文字
+#     show_more_url      = "更多"链接的地址
+# ============================================================
+
+# 关于（介绍文字，无链接）
+[[entries]]
+title = "关于"
+
+  [[entries.entries]]
+  title = "你好，我是 Gheyret。这个博客记录我的技术笔记、随笔与项目分享。"
+
+  [[entries.entries]]
+  title = "GitHub 主页"
+  url = "https://github.com/gheyret"
+
+# 最新文章（列出全部文章）
+[[entries]]
+title = "文章"
+
+  [entries.post_list]
+  section = "posts"       # 只列 content/posts/ 下的文章
+  limit = 10              # 最多显示 10 篇
+  show_more = false       # 文章都在首页列完，不需要"更多"
+
+# 标签（点击查看按标签归档）
+[[entries]]
+title = "标签"
+url = "/tags/"
+
+# 维吾尔语版关于页
+[[entries]]
+title = "Uyghur"
+url = "/about-uyghur/"
+
+# RSS 订阅
+[[entries]]
+title = "RSS"
+url = "/index.xml"
