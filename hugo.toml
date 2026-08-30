@@ -6,7 +6,7 @@
 # ============================================================
 
 # ---------- 基础设置 ----------
-baseURL = "https://gheyret.com/"     # 站点最终上线地址
+baseURL = "https://www.gheyret.com/"   # 站点最终上线地址（自定义域名 www 版）
 title = "Gheyret 的博客"             # 站点名称
 theme = "nostyleplease"              # 使用的主题（themes/nostyleplease/）
 defaultContentLanguage = "zh-cn"     # 默认语言代码

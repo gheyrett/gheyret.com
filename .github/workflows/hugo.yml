@@ -57,7 +57,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://www.gheyret.com/"
 
       - name: 上传产物
         uses: actions/upload-pages-artifact@v3
