@@ -2,7 +2,7 @@
 authors = ["Gheyret"]
 title = "Hello, World"
 date = "2026-08-31"
-draft = true
+draft = false
 description = "欢迎来到我的个人博客"
 tags = [
     "hugo",
