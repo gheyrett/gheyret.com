@@ -1,7 +1,7 @@
 +++
 title = "复合内容测试：图片、公式、代码、表格全都有"
 date = "2026-08-30"
-draft = false
+draft = true
 description = "一篇用于测试主题渲染能力的复合文章：外部图片、MathJax 公式、代码高亮、表格、引用、折叠块、目录。"
 tags = ["测试", "markdown", "mathjax"]
 categories = ["测试"]

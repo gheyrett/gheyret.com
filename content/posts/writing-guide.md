@@ -1,7 +1,7 @@
 +++
 title = "Hugo 写文章完整教程"
 date = "2026-08-30"
-draft = false
+draft = true
 description = "从零开始学写博客文章：文件位置、front matter、Markdown 语法、主题特性（公式/目录/折叠块/图片）、预览与常见坑。"
 tags = ["hugo", "教程", "markdown"]
 categories = ["教程"]

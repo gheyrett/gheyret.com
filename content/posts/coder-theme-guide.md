@@ -2,6 +2,7 @@
 authors = ["Gheyret"]
 title = "Coder 主题介绍与自定义"
 date = "2026-08-30"
+draft = true
 description = "介绍本站使用的 Hugo Coder 主题，以及如何通过配置文件自定义导航菜单、头像和站点信息。"
 tags = [
     "hugo",

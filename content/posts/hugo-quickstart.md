@@ -2,6 +2,7 @@
 authors = ["Gheyret"]
 title = "Hugo 快速入门指南"
 date = "2026-08-30"
+draft = true
 description = "从零开始，用 Hugo 搭建一个静态博客的完整流程，涵盖安装、建站、写文章与部署。"
 tags = [
     "hugo",

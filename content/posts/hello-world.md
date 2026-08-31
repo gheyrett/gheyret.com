@@ -2,6 +2,7 @@
 authors = ["Gheyret"]
 title = "Hello, World! 我的第一篇博客"
 date = "2026-08-30"
+draft = true
 description = "欢迎来到我的个人博客，这是使用 Hugo 和 Coder 主题搭建的第一篇文章。"
 tags = [
     "hugo",

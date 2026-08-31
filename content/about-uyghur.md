@@ -1,7 +1,7 @@
 +++
 title = "مەن ھەققىدە (维吾尔语)"
 date = "2026-08-30"
-draft = false
+draft = true
 rtl = true   # 维吾尔语是 RTL（从右到左）文字，启用后页面从右往左排版
 +++
 
@@ -24,6 +24,6 @@ rtl = true   # 维吾尔语是 RTL（从右到左）文字，启用后页面从�
 ## مەن بىلەن ئالاقىلىشىش
 
 - GitHub: [github.com/gheyret](https://github.com/gheyret)
-- ئېلخەت: gheyret@example.com
+- ئېلخەت: <gheyret@example.com>
 
 پىكر ئالماشتۇرۇشقا خۇش كەلدىڭىز!
