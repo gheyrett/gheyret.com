@@ -21,9 +21,9 @@ author = "Gheyret"
 
 一名热爱技术、热爱写作的开发者。喜欢折腾各种工具和框架，也喜欢把学到的东西整理成文章分享出来。
 
-## 联系我
+<!-- ## 联系我 -->
 
-- GitHub: [github.com/gheyret](https://github.com/gheyret)
-- 邮箱: gheyret@example.com
+<!-- - GitHub: [github.com/gheyret](https://github.com/gheyret) -->
+<!-- - 邮箱: gheyret@example.com -->
 
 欢迎留言交流！
