@@ -39,13 +39,13 @@ title = "文章"
 
 # 标签（点击查看按标签归档）
 [[entries]]
-title = "标签"
+title = "Tags"
 url = "/tags/"
 
 # 维吾尔语版关于页
 [[entries]]
-title = "Uyghur"
-url = "/about-uyghur/"
+title = "About me"
+url = "/about/"
 
 # RSS 订阅
 [[entries]]
